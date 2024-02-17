@@ -1,4 +1,3 @@
-//let textoUsuario=document.getElementById('texto-usuario').value;
 
 function encriptarTexto(){
     let textoUsuario=document.getElementById('texto-usuario').value;
@@ -24,18 +23,47 @@ function encriptarTexto(){
         texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
      alert('Debes ingresar alguna palabra');
     }  
-    console.log(textoEncriptado)
 }
 
 function desencriptarTexto(){
+let textoUsuario=document.getElementById('texto-usuario').value;
+let imagenDeEspera=document.getElementById('muñeco');
+let texto=document.getElementById('texto');
+let textoDesencriptado=textoUsuario
+    
+.replaceAll("enter", "e")
+.replaceAll("imes", "im")
+.replaceAll("ai", "a")
+.replaceAll("ober", "o")
+.replaceAll("ufat", "u");
 
+if(textoUsuario.length != 0){
+    document.getElementById('texto-usuario').value=textoDesencriptado;
+    mensaje.textContent="Mensaje desencriptado exitosamente!"
+    texto.textContent="";
+    imagenDeEspera.src="";
+}else{
+    imagenDeEspera.src="";
+    mensaje.textContent="Ningun mensaje fue encontrado!"
+    texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
+ alert('Debes ingresar alguna palabra');
+}  
 }
 
-//EVENTO PARA EL BOTON 
+
+
+
+
+//EVENTOS PARA EL BOTON 
 let encriptarBtn=document.getElementById('encriptar-btn');
 encriptarBtn.addEventListener("click", () => {
     encriptarTexto()
 }
 )
+
+let desencriptarBtn=document.getElementById('desencriptar-btn');
+desencriptarBtn.addEventListener("click",() =>{
+    desencriptarTexto
+})
 
 
