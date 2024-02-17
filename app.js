@@ -21,7 +21,7 @@ function encriptarTexto(){
         imagenDeEspera.src="";
         mensaje.textContent="Ningun mensaje fue encontrado!"
         texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
-     alert('Debes ingresar alguna palabra');
+    alert('Che, ingresa alguna palabra');
     }  
 }
 
