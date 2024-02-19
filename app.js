@@ -1,29 +1,41 @@
 
 function encriptarTexto(){
+
     let textoUsuario=document.getElementById('texto-usuario').value;
     let imagenDeEspera=document.getElementById('muñeco');
     let texto=document.getElementById('texto');
     let mensaje=document.getElementById('mensaje');
+
+    if (textoUsuario.length === 0) {
+        mensaje.textContent = "Ningun mensaje fue encontrado!";
+        texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
+        alert('Che, ingresa alguna palabra');
+        imagenDeEspera.src="";
+    }else {
+    if (!validacionDeTexto(textoUsuario)) {
+        mensaje.textContent = "El mensaje contiene caracteres inválidos!";
+    }else{
     let textoEncriptado=textoUsuario
-    
+    /*
         .replaceAll("e", "enter")
         .replaceAll("i", "imes")
         .replaceAll("a", "ai")
         .replaceAll("o", "ober")
         .replaceAll("u", "ufat");
+        */
+        .replace(/e/gi, "enter")
+        .replace(/i/gi ,"imes")
+        .replace(/a/gi, "ai")
+        .replace(/o/gi, "ober")
+        .replace(/u/gi, "ufat");
 
-    if(textoUsuario.length != 0){
+    //if(textoUsuario.length != 0){
         document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
         mensaje.textContent="Mensaje encriptado exitosamente!"
         texto.textContent="";
         imagenDeEspera.src="";
-    } else{
-        imagenDeEspera.src="";
-        mensaje.textContent="Ningun mensaje fue encontrado!"
-        texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
-    alert('Che, ingresa alguna palabra');
-    }  
-}
+    }
+}}
 
 function desencriptarTexto(){
 let textoUsuario=document.getElementById('texto-usuario').value;
@@ -51,6 +63,12 @@ if(textoUsuario.length != 0){
 }
 
 
+
+function validacionDeTexto(textoUsuario){
+    let regex = /^[a-z]+$/;
+    return regex.test(textoUsuario);
+}
+ 
 
 
 
