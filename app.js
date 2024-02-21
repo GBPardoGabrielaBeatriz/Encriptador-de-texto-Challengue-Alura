@@ -1,3 +1,32 @@
+/*
+
+Alternativa propuesta por Alura
+const matrizCode = [
+    ["e","inter"],
+["i","imes"],
+["a","ai"],
+["o","ober"],
+["u","ufat"],
+];
+
+function encriptar(textoUsuario){
+    for (let i = 0; i < matrizCode.length; i++) {
+        console.log(matriz_code)
+        if(textoUsuario.includes(matrizCode[i][0])){
+            textoUsuario=textoUsuario.replaceAll(
+                matrizCode[i][0],
+                matrizCode[i][1]
+            )
+        }
+    }
+    return textoUsuario;
+}
+console.log(matrizCode.length)
+
+*/
+
+
+
 
 function encriptarTexto(){
 
