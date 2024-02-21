@@ -34,6 +34,7 @@ function encriptarTexto(){
     let imagenDeEspera=document.getElementById('muñeco');
     let texto=document.getElementById('texto');
     let mensaje=document.getElementById('mensaje');
+    let textoYaEncriptado=document.getElementById('texto-encriptado');
 
     if (textoUsuario.length === 0) {
         mensaje.textContent = "Ningun mensaje fue encontrado!";
@@ -57,17 +58,20 @@ function encriptarTexto(){
         .replace(/a/gi, "ai")
         .replace(/o/gi, "ober")
         .replace(/u/gi, "ufat");
-
+        console.log(textoEncriptado)
     //if(textoUsuario.length != 0){
-        document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
+        document.getElementById('texto-encriptado').value = textoEncriptado;
+textoYaEncriptado.innerText=textoEncriptado
+console.log(textoYaEncriptado)
+       // document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
         mensaje.textContent="Mensaje encriptado exitosamente!"
         texto.textContent="";
         imagenDeEspera.src="";
     }
-}}
-
+}
+}
 function desencriptarTexto(){
-let textoUsuario=document.getElementById('texto-usuario').value;
+let textoUsuario=document.getElementById('texto-encriptado').value;
 let imagenDeEspera=document.getElementById('muñeco');
 let texto=document.getElementById('texto');
 let textoDesencriptado=textoUsuario
