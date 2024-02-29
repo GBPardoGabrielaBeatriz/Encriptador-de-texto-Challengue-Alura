@@ -61,12 +61,13 @@ function encriptarTexto(){
         console.log(textoEncriptado)
     //if(textoUsuario.length != 0){
         document.getElementById('texto-encriptado').value = textoEncriptado;
-textoYaEncriptado.innerText=textoEncriptado
+//textoYaEncriptado.innerText=textoEncriptado
 console.log(textoYaEncriptado)
        // document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
         mensaje.textContent="Mensaje encriptado exitosamente!"
         texto.textContent="";
         imagenDeEspera.src=""; 
+        textoUsuario.textContent="";
     }
 }
 }
@@ -86,17 +87,17 @@ function desencriptarTexto(){
     if (!validacionDeTexto(textoUsuario)) {
         mensaje.textContent = "El mensaje contiene caracteres inválidos!";
     }else{
-        let textoDesencriptado=textoUsuario
+    textoYaEncriptado=textoUsuario
     
 .replaceAll("enter", "e")
 .replaceAll("imes", "im")
 .replaceAll("ai", "a")
 .replaceAll("ober", "o")
 .replaceAll("ufat", "u");
-//document.getElementById('texto-encriptado').value = textoEncriptado;
-textoYaEncriptado.innerText=textoYaEncriptado;
+document.getElementById('texto-encriptado').value = textoYaEncriptado;
+//textoYaEncriptado.innerText=textoYaEncriptado;
 console.log(textoYaEncriptado)
-       // document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
+        document.getElementById('texto-usuario').value=textoUsuario;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
         mensaje.textContent="Mensaje deseencriptado exitosamente!"
         texto.textContent="";
         imagenDeEspera.src="";
@@ -135,6 +136,8 @@ if(textoUsuario.length != 0){
 
 function copiarTexto(){
     let textoYaEncriptado=document.getElementById('texto-encriptado');
+    let textoUsuarioElement = document.getElementById('texto-usuario'); // Elemento del DOM
+    let textoUsuario = textoUsuarioElement.value; // Valor actual del input
 
     if (textoYaEncriptado.length === 0) {
         mensaje.textContent = "No hay mensaje para copiar";
@@ -145,11 +148,14 @@ function copiarTexto(){
     textoYaEncriptado.select();
     document.execCommand('copy');
     mensaje.textContent="Mensaje copiado!"
+    textoUsuarioElement.value = ""; 
+    textoUsuario.placeholder="Ingresa el mensaje a desencriptar"
+
 }}
 
 
 function validacionDeTexto(textoUsuario){
-    let regex = /^[a-z]+$/;
+    let regex = /^[a-z\s]+$/;
     return regex.test(textoUsuario);
 }
 
