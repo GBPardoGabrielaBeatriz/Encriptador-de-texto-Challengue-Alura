@@ -1,5 +1,4 @@
 /*
-
 Alternativa propuesta por Alura
 const matrizCode = [
     ["e","inter"],
@@ -22,14 +21,8 @@ function encriptar(textoUsuario){
     return textoUsuario;
 }
 console.log(matrizCode.length)
-
 */
-
-
-
-
 function encriptarTexto(){
-
     let textoUsuario=document.getElementById('texto-usuario').value;
     let imagenDeEspera=document.getElementById('muñeco');
     let texto=document.getElementById('texto');
@@ -40,10 +33,11 @@ function encriptarTexto(){
         mensaje.textContent = "Ningun mensaje fue encontrado!";
         texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
         alert('Che, ingresa alguna palabra');
-        imagenDeEspera.src="";
+        imagenDeEspera.src="img/texto desencriptado.jpg";
     }else {
     if (!validacionDeTexto(textoUsuario)) {
         mensaje.textContent = "El mensaje contiene caracteres inválidos!";
+        imagenDeEspera.src="img/caracteres incorrectos.jpg";
     }else{
     let textoEncriptado=textoUsuario
     /*
@@ -66,7 +60,7 @@ console.log(textoYaEncriptado)
        // document.getElementById('texto-usuario').value=textoEncriptado;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
         mensaje.textContent="Mensaje encriptado exitosamente!"
         texto.textContent="";
-        imagenDeEspera.src=""; 
+        imagenDeEspera.src="img/images (1).jpg";
         textoUsuario.textContent="";
     }
 }
@@ -82,25 +76,26 @@ function desencriptarTexto(){
         mensaje.textContent = "Ningun mensaje fue encontrado!";
         texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
         alert('Che, ingresa alguna palabra');
-        imagenDeEspera.src="";
+        imagenDeEspera.src="img/texto desencriptado.jpg";
     }else {
     if (!validacionDeTexto(textoUsuario)) {
         mensaje.textContent = "El mensaje contiene caracteres inválidos!";
+        imagenDeEspera.src="img/caracteres incorrectos.jpg";
     }else{
     textoYaEncriptado=textoUsuario
-    
 .replaceAll("enter", "e")
 .replaceAll("imes", "im")
 .replaceAll("ai", "a")
 .replaceAll("ober", "o")
 .replaceAll("ufat", "u");
+
 document.getElementById('texto-encriptado').value = textoYaEncriptado;
 //textoYaEncriptado.innerText=textoYaEncriptado;
 console.log(textoYaEncriptado)
         document.getElementById('texto-usuario').value=textoUsuario;// Aca hay que volver a acceder a la variable, ya que la misma que fue llamada anteriormente ya fue modificada con el encriptado
-        mensaje.textContent="Mensaje deseencriptado exitosamente!"
+        mensaje.textContent="Mensaje desencriptado exitosamente!"
         texto.textContent="";
-        imagenDeEspera.src="";
+        imagenDeEspera.src="img/mmm.jpg";
     }
 }
 }

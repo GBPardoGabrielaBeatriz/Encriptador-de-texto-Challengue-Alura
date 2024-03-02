@@ -2,17 +2,62 @@
     margin: 0;
     padding: 0;
 }
-.fondo{
+/*HEADER*/
+header{
+    display: flex;
+    min-height: 70px;
+    background-color :#FFBF5A;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    color:black;
+    color : #D97855;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+.logo img {
+    display:flex;
+    width:100px;
+    height: 50px;
+    margin: 10px;
+    padding: 0 10px 0 10px;
+}
+.logo h2 {
+    color:rgb(41, 41, 82);
+    font-size: 30px;
+    padding: 2px; 
+    align-items: center; 
+} 
+h2{
+    font-family: "Josefin Sans";
+}
+
+.neon{
+    /*color:#fff;*/
+    color:black;
+    /*
+    text-shadow: 0 0 5px rgb(241, 192, 212),
+    0 0 25px rgb(241, 192, 212),
+    0 0 50px rgb(241, 192, 212),
+    0 0 100px rgb(241, 192, 212);
+    */
+    text-shadow: 0 0 5px rgb(248, 84, 152),
+    0 0 25px rgb(248, 84, 152),
+    0 0 50px rgb(248, 84, 152),
+    0 0 100px rgb(248, 84, 152);
+    letter-spacing: 5px;
+    cursor: pointer
+}
 .contenedor{
+    display: flex;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     margin: auto;
-   background-color: #F3F5FC;
+    background-color: #DA4E86;
 }
 .texto-usuario{
     position: absolute;
@@ -20,13 +65,15 @@
     height: 60%;
     left: 12%;
     top:15%;
-    border: none;
-    font-family: "Inter";
+    font-family: "Josefin Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
     line-height: 150%;
     background-color: #F3F5FC;
+    border: 2px solid black;
+    border-radius: 2%;
+    padding: 2px;
 }
 .texto-usuario:focus,
 .texto-usuario:active{
@@ -34,7 +81,7 @@ border: none;
 outline: none;
 }
 .texto-usuario::placeholder{
-   color : #0A3871;
+color : #DA4E86;
 }
 .terminos{
     display: flex;
@@ -45,13 +92,13 @@ outline: none;
     position: absolute;
     width: 80%;
     left: 12%;
-    top:80%;
+    top:78%;
 }
 .terminos p{
-    color:red;
-    font-family: "Inter";
-    font-size: 12px;
-    font-style: italic;
+    color:black;
+    font-family: "Josefin Sans";
+    font-size: 14px;
+    font-style: italic bold;
     font-weight: 400;
     opacity: 0.8;
     line-height: 150%;
@@ -63,25 +110,24 @@ outline: none;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 1% 0;
     position: absolute;
     width: 80%;
     left: 12%;
-    top: 85%;
+    top: 83%;
 }
 .encriptar-btn{
-   align-items: center;
-   justify-content: center;
-   padding: 2%;
-   gap:8px;
-   width: 25%;
-   background-color: orangered; 
-   border-radius: 24px;
-   font-family: "Inter";
-   font-size: 18px;
-   line-height: 18px;
-   text-align: center;
-   color: wheat;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap:8px;
+    width: 25%;
+    background-color: #FFBF5A; 
+    border-radius: 24px;
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: black;
 }
 .desencriptar-btn{
     align-items: center;
@@ -89,9 +135,9 @@ outline: none;
     padding: 2%;
     gap:8px;
     width: 25%;
-    background-color: orange; 
+    background-color: #FFBF5A; 
     border-radius: 24px;
-    font-family: "Inter";
+    font-family: "Josefin Sans";
     font-size: 18px;
     line-height: 18px;
     text-align: center;
@@ -101,13 +147,28 @@ outline: none;
     flex-direction: row;
     font-weight: 400;
 }
+.copiar-btn{
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap:8px;
+    width: 25%;
+    background-color:#FFBF5A; 
+    border-radius: 24px;
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: black;
+}
 .hover-estilo{
-    margin: 0.3%;
+margin: 0.3%;
 width: 24.5%;
 padding: 1.8%;
 }
 .encriptar-btn:hover,
-.desencriptar-btn:hover
+.desencriptar-btn:hover,
+.copiar-btn:hover
 {
 margin: 0.3%;
 width: 24.5%;
@@ -119,57 +180,62 @@ padding: 1.8%;
     justify-content:center;
     position: absolute;
     width: 30%;
-    height: 90%;
+    height: 85%;
     left: 60%;
     top: 5%;
     background-color: white;
     box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.08);
     border-radius: 32px;
+    border:2px solid black;
 }
 
 .textoEncriptado{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   padding: 1%;
-   gap: 16px;
-   position: absolute;
-   width: 100%;
-   top: 65%;
-   text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 2px;
+gap: 16px;
+position: absolute;
+width: 100%;
+top: 50%;
+text-align: center;
+border-radius:2px;
 }
 .mensaje{
     width: 60%;
-    font-family: "Inter";
+    font-family: "Josefin Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 24px ;
     line-height: 120%;
     text-align: center;
-    color: pink;
+    color: #DA4E86;
 }
 .texto{
     width: 80%;
-    font-family: "Inter";
+    font-family: "Josefin Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 16px ;
     line-height: 150%;
     text-align: center;
-    color: bisque;
+    color: rgb(124, 101, 73);
 }
 .desencriptar img{
     position: absolute;
-    width: 80%;
-    height: 50%;
-    top: 15%;
+    width: 60%;
+    height: 44%;
+    top: 5%;
 }
 
 .texto-encriptado{
-    width:70%;
-    height: 50px;
+    width:50%;
+    height: 30px;
     color:black;
+    border-radius: 2px;
+    font-size: 20px;
+    font-family: "Josefin Sans";
 }
 @media(max-width :57.5em){
     .contenedor{
@@ -199,12 +265,14 @@ padding: 1.8%;
         top: 70%;  
     }
     .encriptar-btn, 
-    .desencriptar-btn{
-      width: 48%;
-     border-radius: 16px;
+    .desencriptar-btn,
+    .copiar-btn{
+    width: 48%;
+    border-radius: 16px;
     }
     .encriptar-btn:hover,
-    .desencriptar-btn:hover{
+    .desencriptar-btn:hover,
+    .copiar-btn:hover{
         margin: 0.3%;
         width: 47.5%;
         padding: 1.8%;
@@ -220,9 +288,32 @@ padding: 1.8%;
         top: 5%
     }
     .desencriptar img{
-     top: 0;
-     display: none;
-     visibility: hidden;
+    top: 0;
+    display: none;
+    visibility: hidden;
     
     }
+}
+
+/*FOOTER*/
+.footer{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap:1px;
+    margin-top: 15px;
+    padding: 15px;
+    height: 8px;
+    color:#D97855;
+    font-size: 1rem;
+    font-family: "Josefin Sans";
+}
+.link-sm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1rem;
+    gap:10px;
+    margin-top: 10px;
 }
