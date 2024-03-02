@@ -12,7 +12,6 @@ header{
     width: 100%;
     color : #D97855;
 }
-
 .logo {
     display: flex;
     align-items: center;
@@ -22,7 +21,6 @@ header{
     display:flex;
     width:100px;
     height: 50px;
-    margin: 10px;
     padding: 0 10px 0 10px;
 }
 .logo h2 {
@@ -36,14 +34,7 @@ h2{
 }
 
 .neon{
-    /*color:#fff;*/
     color:black;
-    /*
-    text-shadow: 0 0 5px rgb(241, 192, 212),
-    0 0 25px rgb(241, 192, 212),
-    0 0 50px rgb(241, 192, 212),
-    0 0 100px rgb(241, 192, 212);
-    */
     text-shadow: 0 0 5px rgb(248, 84, 152),
     0 0 25px rgb(248, 84, 152),
     0 0 50px rgb(248, 84, 152),
@@ -224,7 +215,7 @@ border-radius:2px;
 }
 .desencriptar img{
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 44%;
     top: 5%;
 }
@@ -237,10 +228,11 @@ border-radius:2px;
     font-size: 20px;
     font-family: "Josefin Sans";
 }
-@media(max-width :57.5em){
+@media(max-width :600px){
     .contenedor{
         display: flex;
         flex-direction: row;
+        height: 88vh;
     }
     .encriptar{
         width: 100%;
@@ -252,9 +244,10 @@ border-radius:2px;
         top: 5%;
     }
     .terminos{
+        flex-direction: column;
         width: 80%;
         left: 10%;
-        top:65%;
+        top:45%;
     }
     .terminos p{
         font-size: 16px;
@@ -262,7 +255,7 @@ border-radius:2px;
     .botones{
         width: 80%;
         left: 10%;
-        top: 70%;  
+        top: 53%;  
     }
     .encriptar-btn, 
     .desencriptar-btn,
@@ -278,23 +271,29 @@ border-radius:2px;
         padding: 1.8%;
     }
     .desencriptar{
+        flex-direction: column;
         width: 80%;
         height: 15%;
         left: 10%;
-        top: 80%;
+        top: 60%;
     }
     .textoEncriptado{
         width: 100%;
-        top: 5%
+        top: 20%
     }
     .desencriptar img{
     top: 0;
     display: none;
     visibility: hidden;
-    
+    }
+    .texto-usuario{
+        position: relative;
+        width: 80%;
+        height: 30%;
+        left: 10%;
+        top:10%;   
     }
 }
-
 /*FOOTER*/
 .footer{
     display: flex;

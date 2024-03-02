@@ -100,73 +100,28 @@ console.log(textoYaEncriptado)
 }
 }
 
-/*
-//FALTA TERMINAR EL DESENCRIPTAR Y COPIAR
-function desencriptarTexto(){
-let textoUsuario=document.getElementById('texto-usuario').value;
-let imagenDeEspera=document.getElementById('muñeco');
-let texto=document.getElementById('texto');
-let textoDesencriptado=textoUsuario
-    
-.replaceAll("enter", "e")
-.replaceAll("imes", "im")
-.replaceAll("ai", "a")
-.replaceAll("ober", "o")
-.replaceAll("ufat", "u");
-
-if(textoUsuario.length != 0){
-    document.getElementById('texto-usuario').value=textoDesencriptado;
-    mensaje.textContent="Mensaje desencriptado exitosamente!"
-    texto.textContent="";
-    imagenDeEspera.src="";
-}else{
-    imagenDeEspera.src="";
-    mensaje.textContent="Ningun mensaje fue encontrado!"
-    texto.textContent="Ingrese el mensaje secreto para encriptar o desencriptar"
- alert('Debes ingresar alguna palabra');
-}  
-}
-
-**/
-
 function copiarTexto(){
     let textoYaEncriptado=document.getElementById('texto-encriptado');
     let textoUsuarioElement = document.getElementById('texto-usuario'); // Elemento del DOM
-    let textoUsuario = textoUsuarioElement.value; // Valor actual del input
-
-    if (textoYaEncriptado.length === 0) {
-        mensaje.textContent = "No hay mensaje para copiar";
-       texto.textContent=""
-       // alert('Che, ingresa alguna palabra');
-        imagenDeEspera.src="";
-    }else {
     textoYaEncriptado.select();
     document.execCommand('copy');
-    mensaje.textContent="Mensaje copiado!"
     textoUsuarioElement.value = ""; 
-    textoUsuario.placeholder="Ingresa el mensaje a desencriptar"
-
-}}
-
+}
 
 function validacionDeTexto(textoUsuario){
     let regex = /^[a-z\s]+$/;
     return regex.test(textoUsuario);
 }
-
 //EVENTOS PARA EL BOTON 
 let encriptarBtn=document.getElementById('encriptar-btn');
 encriptarBtn.addEventListener("click", () => {
     encriptarTexto()
-
 }
 )
-
 let desencriptarBtn=document.getElementById('desencriptar-btn');
 desencriptarBtn.addEventListener("click",() =>{
     desencriptarTexto();
 })
-
 let copiarBtn=document.getElementById('copiar-btn');
 copiarBtn.addEventListener("click",() =>{
     copiarTexto();
